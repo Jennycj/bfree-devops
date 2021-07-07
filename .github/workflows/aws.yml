@@ -24,7 +24,8 @@ jobs:
         IMAGE_TAG_1: ${{ env.APP_IMAGE }}
         IMAGE_TAG_2: ${{ env.MONGO_IMAGE }}
       run: |
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG_1 .
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG_2 .
+        docker compose up --build
+        docker tag $IMAGE_TAG_1 $ECR_REGISTRY/$ECR_REPOSITORY
+        docker tag $IMAGE_TAG_2 $ECR_REGISTRY/$ECR_REPOSITORY
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG_1
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG_2
