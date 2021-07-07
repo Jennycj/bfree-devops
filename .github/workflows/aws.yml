@@ -18,11 +18,8 @@ jobs:
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v1
     - name: Tag, and push image to Amazon ECR
-      env:
-        IMAGE_TAG_1: ${{ env.APP_IMAGE }}
-        IMAGE_TAG_2: ${{ env.MONGO_IMAGE }}
       run: |
-        docker tag $IMAGE_TAG_1 ${{ env.ECR_REPOSITORY }}
-        docker tag $IMAGE_TAG_2 ${{ env.ECR_REPOSITORY }}
+        docker tag ${{ env.APP_IMAGE }} ${{ env.ECR_REPOSITORY }}
+        docker tag ${{ env.MONGO_IMAGE }} ${{ env.ECR_REPOSITORY }}
         docker push ${{ env.ECR_REPOSITORY }}
         docker push ${{ env.ECR_REPOSITORY }}
