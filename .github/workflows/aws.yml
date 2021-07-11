@@ -19,4 +19,4 @@ jobs:
       uses: aws-actions/amazon-ecr-login@v1
     - name: Tag, and push image to Amazon ECR
       run: |
-        docker compose up --build
+        docker compose up
