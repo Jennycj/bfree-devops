@@ -2,7 +2,7 @@ version: "3.8"
 services:
   app:
     container_name: app
-    image: user_api:tag 394650570520.dkr.ecr.us-east-1.amazonaws.com/jennycj-bfree-challenge:latest
+    image: user_api:tag ${{ secrets.ECR_REPOSITORY }}
     restart: always
     build: .
     ports:
