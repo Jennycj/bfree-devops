@@ -11,7 +11,7 @@ services:
       - mongo
   mongo:
     container_name: mongo
-    image: mongo:tag
+    image: mongo
     volumes:
       - ./users:/data/db
     ports:
