@@ -23,6 +23,6 @@ jobs:
     - name: Build, tag and push image to Amazon ECR
       run: |
         docker-compose up -d --build
-        docker push ${{ secrets.ECR_REPOSITORY }
+        docker push ${{ secrets.ECR_REPOSITORY }}
 
         
