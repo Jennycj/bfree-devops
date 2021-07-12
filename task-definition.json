@@ -1,0 +1,84 @@
+{
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "inferenceAccelerators": [],
+    "containerDefinitions": [
+        {
+            "name": "mongo",
+            "image": "394650570520.dkr.ecr.us-east-1.amazonaws.com/jennycj-bfree-challenge",
+            "resourceRequirements": null,
+            "essential": true,
+            "portMappings": [
+                {
+                    "containerPort": "22",
+                    "protocol": "tcp"
+                }
+            ],
+            "environment": null,
+            "environmentFiles": [],
+            "secrets": null,
+            "mountPoints": null,
+            "volumesFrom": null,
+            "hostname": null,
+            "user": null,
+            "workingDirectory": null,
+            "extraHosts": null,
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/ecs/bfree-task",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            },
+            "ulimits": null,
+            "dockerLabels": null,
+            "dependsOn": null,
+            "repositoryCredentials": null
+        },
+        {
+            "name": "app",
+            "image": "jennycj-bfree-challenge/latest",
+            "resourceRequirements": null,
+            "essential": true,
+            "portMappings": [
+                {
+                    "containerPort": "22",
+                    "protocol": "tcp"
+                }
+            ],
+            "environment": null,
+            "environmentFiles": [],
+            "secrets": null,
+            "mountPoints": null,
+            "volumesFrom": null,
+            "hostname": null,
+            "user": null,
+            "workingDirectory": null,
+            "extraHosts": null,
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/ecs/bfree-task",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            },
+            "ulimits": null,
+            "dockerLabels": null,
+            "dependsOn": null,
+            "repositoryCredentials": {
+                "credentialsParameter": ""
+            }
+        }
+    ],
+    "volumes": [],
+    "networkMode": "awsvpc",
+    "memory": "1024",
+    "cpu": "256",
+    "executionRoleArn": "arn:aws:iam::394650570520:role/ecsTaskExecutionRole",
+    "family": "bfree-task",
+    "taskRoleArn": "arn:aws:iam::394650570520:role/ecsTaskExecutionRole",
+    "tags": []
+}
