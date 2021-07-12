@@ -9,12 +9,6 @@
             "image": "394650570520.dkr.ecr.us-east-1.amazonaws.com/jennycj-bfree-challenge",
             "resourceRequirements": null,
             "essential": true,
-            "portMappings": [
-                {
-                    "containerPort": "22",
-                    "protocol": "tcp"
-                }
-            ],
             "environment": null,
             "environmentFiles": [],
             "secrets": null,
@@ -42,12 +36,6 @@
             "image": "jennycj-bfree-challenge/latest",
             "resourceRequirements": null,
             "essential": true,
-            "portMappings": [
-                {
-                    "containerPort": "22",
-                    "protocol": "tcp"
-                }
-            ],
             "environment": null,
             "environmentFiles": [],
             "secrets": null,
