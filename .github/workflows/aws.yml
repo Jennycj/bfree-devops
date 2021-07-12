@@ -40,20 +40,14 @@ jobs:
         task-definition: task-definition.json
         container-name: app
         image: ${{ secrets.APP_IMAGE }}
-    - name: Deploy mongo Amazon ECS task definition
-      uses: aws-actions/amazon-ecs-deploy-task-definition@v1
-      with:
-        task-definition: ${{ steps.task-def1.outputs.task-definition }}
-        service: bfreeService
-        cluster: bfreeCluster
-        wait-for-service-stability: true
-    - name: Deploy app Amazon ECS task definition
+    - name: Deploy Amazon ECS task definition
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
         task-definition: ${{ steps.task-def2.outputs.task-definition }}
         service: bfreeService
         cluster: bfreeCluster
         wait-for-service-stability: true
+    
 
 
         
