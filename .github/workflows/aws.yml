@@ -20,8 +20,9 @@ jobs:
     - name: setup mongo uri
       run:  |
         echo "DATABASE_URL_ATLAS=${{ secrets.DATABASE_URL_ATLAS }}" >> .env
-    - name: Tag, and push image to Amazon ECR
+    - name: Build, tag and push image to Amazon ECR
       run: |
         docker-compose up -d --build
+        docker push ${{ secrets.ECR_REPOSITORY }
 
         

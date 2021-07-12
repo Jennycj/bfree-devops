@@ -2,6 +2,7 @@ version: "3.8"
 services:
   app:
     container_name: app
+    image: user_api:tag ${{ secrets.ECR_REPOSITORY }}
     restart: always
     build: .
     ports:
@@ -10,7 +11,7 @@ services:
       - mongo
   mongo:
     container_name: mongo
-    image: mongo
+    image: mongo:tag ${{ secrets.ECR_REPOSITORY }}
     volumes:
       - ./users:/data/db
     ports:
