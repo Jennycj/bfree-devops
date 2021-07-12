@@ -17,7 +17,7 @@ jobs:
     - name: Login to Amazon ECR
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v1
-      name: setup mongo uri
+    - name: setup mongo uri
       run:  |
         echo .env >> "DATABASE_URL_ATLAS=${{ secret.DATABASE_URL_ATLAS }}" and a list of it.
     - name: Tag, and push image to Amazon ECR
